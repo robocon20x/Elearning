@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat&family=Poppins:wght@200&display=swap');
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #03a9f4;
+    transition : 0.5s;
+    flex-direction: column;
+}
+
+body.active{
+    background: #f43648;
+}
+
+.head li{
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height:70px;
+    z-index: 1;
+}
+.head li a{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    margin-left: 23em;
+    margin-bottom: 5em;
+    transition: 0.5s;
+}
+
+.head li a .icon{
+    font-size: 1.5em;
+    transition: 0.5s;
+}
+
+.head li:hover a .icon{
+    transform: translateY(-10px);
+}
+
+.head li a .text{
+    font-size: 0.75em;
+    opacity: 0;
+    transition: 0.5s;
+}
+.head li:hover a .text{
+    opacity: 1;
+    transform: translateY(-10px);
+}
+
+
+.container{
+    display: flex;
+    position:relative;
+    width:800px;
+    height:500px;
+    margin:20px;
+}
+
+.blueBg{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    position:absolute;
+    top:40px;
+    width: 100%;
+    height:420px;
+    background:rgba(255,255,255,0.2);
+    box-shadow: 0 5px 45px rgba(0,0,0,0.2);
+}
+
+.blueBg .box{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.blueBg .box h2{
+    color:white;
+    font-size: 1.2em;
+    font-weight: 5000;
+    margin-bottom: 15px;
+}
+
+.blueBg .box button{
+    cursor: pointer;
+    padding: 10px 20px;
+    background: white;
+    color: #333;
+    border:none;
+    font-size: 16px;
+    border-radius: 25px;
+    transition: 0.5s;
+}
+.blueBg .box button:hover{
+    transform: translateY(-5px) ;
+}
+
+.formBx{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 45px rgba(0,0,0,0.2);
+    transition: 0.5s;
+    overflow: hidden;
+}
+.formBx.active{
+    transform: translateX(100%);
+}
+
+.formBx.active .signinForm{
+    transform: translateX(-200%);
+}
+
+.formBx.active .signupForm{
+    transform: translateX(-200%);
+}
+.formBx .form{
+    position:absolute;
+    left: 0;
+    padding: 50px;
+    width: 100%;
+    transition: 0.5s;
+}
+
+.formBx .form form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.formBx .form form h3{
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.formBx .form form input{
+    width: 100%;
+    margin-bottom: 20px;
+    padding:10px;
+    outline: none;
+    font-size: 16px;
+    border: 1px solid #333; 
+}
+
+.formBx .form form input[type = "submit"]{
+    background: #03a9f4;
+    border:none;
+    color :white;
+    max-width: 100px;
+    cursor: pointer;
+}
+.formBx .signupForm form input[type = "submit"]{
+    background: #f43648;
+}
+.formBx .form form .forgot{
+    text-decoration: none;
+    color:#333;
+}
+
+.formBx .signupForm{
+    left: 200%;
+}

@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat&family=Poppins:wght@200&display=swap');
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #ebf5fc;
+    flex-wrap: wrap;
+}
+
+.top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    background: #30D799;
+    padding: 20px;
+    flex-direction: column;
+}
+.top .logo{
+    margin-bottom: 50px;
+}
+.top .logo a{
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.top .menu{
+    width: 600px;
+    height: 70px;
+    background: black;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    border-radius: 10px;
+
+}
+.top .menu ul{
+    display: flex;
+    width: 540px;
+}
+
+.top .menu ul li{
+    position: relative;
+    list-style: none;
+    width: 90px;
+    height:70px;
+    z-index: 1;
+}
+
+.top .menu ul li a{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+.top .menu ul li a .icon{
+    position: relative;
+    display: block;
+    line-height: 70px;
+    font-size: 1.5em;
+    text-align: center;
+    transition:0.5s;
+    color: white
+}
+.top .menu ul li.active a .icon{
+    transform: translateY(-32px);
+    color:black;
+    
+}
+
+.top .menu ul li a .text{
+    position:absolute;
+    color:white;
+    font-size : 0.75em;
+    font-weight:bold;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.top .menu ul li.active a .text{
+    opacity: 1;
+    transform: translateY(10px);
+}
+
+.indicator{
+    margin-left: 10px;
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background: #29fd53;
+    top: -35px;
+    border-radius: 50%;
+    border: 6px solid #30d799;
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.indicator::before{
+    content: '';
+    top:50%;
+    left:-22px;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-right-radius: 20px;
+    box-shadow: 0 -10px 0 0  #30d799;
+}
+
+.indicator::after{
+    content: '';
+    top:50%;
+    right:-22px;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-left-radius: 20px;
+    box-shadow: 0 -10px 0 0  #30d799;
+}
+
+
+.menu ul li:nth-child(1).active ~ .indicator{
+    opacity: 1;
+    transform: translateX(calc(90px*0));
+}
+
+.menu ul li:nth-child(2).active ~ .indicator{
+    opacity: 1;
+    transform: translateX(calc(90px*1));
+}
+
+.menu ul li:nth-child(3).active ~ .indicator{
+    opacity: 1;
+    transform: translateX(calc(90px*2));
+}
+
+.menu ul li:nth-child(4).active ~ .indicator{
+    opacity: 1;
+    transform: translateX(calc(90px*3));
+}
+
+.menu ul li:nth-child(5).active ~ .indicator{
+    opacity: 1;
+    transform: translateX(calc(90px*4));
+}
+
+.menu ul li:nth-child(6).active ~ .indicator{
+    opacity: 1;
+    transform: translateX(calc(90px*5));
+}
+
+.searchbar {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.searchbar .search{
+    width: 500px;
+    height: 35px;
+    border-radius: 25px;
+    padding-left: 50px;
+    border: none;
+    outline: none; 
+    box-shadow: 2px 5px 0 rgba(0,0,0,0.2);
+    transition: 0.5s;
+    transform: translateY(-10px);
+    opacity: 0;
+}
+
+.searchbar.active .search{
+    opacity: 1;
+    transform: translateY(10px);
+}
+
+.searchbar .clear{
+    position: absolute;
+    margin-top: -5px;
+    transform: translateX(-180%);
+    width: 20px;
+    height: 20px;
+    transition: 0.5s;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.searchbar.active .clear{
+    margin-top: 17.75px;
+    opacity: 1;
+}
+
+.containerCourse{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 40px 0;
+}
+
+.containerCourse .card {
+    position: relative;
+    margin: 20px;
+    width:420px;
+    height:440px;
+    box-shadow: inset 5px 5px 5px rgba(0,0,0,0.05),
+    inset -5px -5px 5px rgba(255,255,255,0.5),
+    5px 5px 5px rgba(0,0,0,0.05),
+    -5px -5px 5px rgba(255,255,255,0.5);
+    border-radius: 15px;
+    transition: 0.75s;
+}
+
+.containerCourse .card .box{
+    position:absolute;
+    top:20px;
+    right:20px;
+    left:20px;
+    bottom:20px;
+    background: #ebf5fc;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.containerCourse .card:hover .box{
+    transform: translateY(-25px);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    background: #25d675;
+}
+.containerCourse .card .box .content{
+    padding: 20px;
+    text-align: center;
+}
+
+.containerCourse .card .box .content h2{
+    position:absolute;
+    top: -10px;
+    right: 30px;
+    font-size:8em;
+    color: rgba(0,0,0,0.02);
+    transition: 0.5s;
+    pointer-events: none;
+    
+}
+
+.containerCourse .card:hover .box .content h2{
+    color: rgba(0,0,0,0.09);
+}
+
+.containerCourse .card .box .content h3{
+    font-size:1.8em;
+    color:#777;
+    z-index: 1;
+    transition: 0.5s;
+    transform: translateY(30px);
+}
+
+.containerCourse .card:hover .box .content h3{
+    color:white;
+    transform: translateY(-30px);
+}
+.containerCourse .card .box .content p{
+    font-size:1em;
+    font-weight:300;
+    color:#777;
+    z-index: 1;
+    transition: 0.5s;
+    transform: translateY(80px);
+    opacity: 0;
+}
+.containerCourse .card:hover .box .content p{
+    transform: translateY(-0.1px);
+    opacity: 1;
+    color:white;
+}
+.containerCourse .card .box .content a{
+    background: #03a9f4;
+    position: relative;
+    display: inline-block;
+    padding: 8px 20px;
+    color: white;
+    font-weight: 900;
+    top: 25px;
+    border-radius: 20px;
+    transition: 0.5s;
+    text-decoration: none;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transform: translateY(80px);
+    opacity: 0;
+}
+
+.containerCourse .card:hover .box .content a{
+    opacity: 1;
+    transform: translateY(-0.1px);
+    
+}
+.containerCourse.card .box .content a:hover{
+    background-color: #ff56bf;
+ }

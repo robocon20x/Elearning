@@ -1,0 +1,478 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat&family=Poppins:wght@200&display=swap');
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+.top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    background: #30D799;
+    padding: 50px;
+    flex-direction: column;
+}
+.top .logo{
+    margin-bottom: 50px;
+}
+.top .logo a{
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.top .menu{
+    width: 600px;
+    height: 70px;
+    background: black;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    border-radius: 10px;
+
+}
+.top .menu ul{
+    display: flex;
+    width: 540px;
+}
+
+.top .menu ul li{
+    position: relative;
+    list-style: none;
+    width: 90px;
+    height:70px;
+    z-index: 1;
+}
+
+.top .menu ul li a{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+.top .menu ul li a .icon{
+    position: relative;
+    display: block;
+    line-height: 70px;
+    font-size: 1.5em;
+    text-align: center;
+    transition:0.5s;
+    color: white
+}
+.top .menu ul li.active a .icon{
+    transform: translateY(-32px);
+    color:black;
+    
+}
+
+.top .menu ul li a .text{
+    position:absolute;
+    color:white;
+    font-size : 0.75em;
+    font-weight:bold;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.top .menu ul li.active a .text{
+    opacity: 1;
+    transform: translateY(10px);
+}
+
+.indicator{
+    margin-left: 10px;
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background: #29fd53;
+    top: -35px;
+    border-radius: 50%;
+    border: 6px solid #30d799;
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.indicator::before{
+    content: '';
+    top:50%;
+    left:-22px;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-right-radius: 20px;
+    box-shadow: 0 -10px 0 0  #30d799;
+}
+
+.indicator::after{
+    content: '';
+    top:50%;
+    right:-22px;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-left-radius: 20px;
+    box-shadow: 0 -10px 0 0  #30d799;
+}
+
+
+.menu ul li:nth-child(1).active ~ .indicator{
+    opacity: 1;
+    transform: translateX(calc(90px*0));
+}
+
+.menu ul li:nth-child(2).active ~ .indicator{
+    opacity: 1;
+    transform: translateX(calc(90px*1));
+}
+
+.menu ul li:nth-child(3).active ~ .indicator{
+    opacity: 1;
+    transform: translateX(calc(90px*2));
+}
+
+.menu ul li:nth-child(4).active ~ .indicator{
+    opacity: 1;
+    transform: translateX(calc(90px*3));
+}
+
+.menu ul li:nth-child(5).active ~ .indicator{
+    opacity: 1;
+    transform: translateX(calc(90px*4));
+}
+
+.menu ul li:nth-child(6).active ~ .indicator{
+    opacity: 1;
+    transform: translateX(calc(90px*5));
+}
+
+.searchbar {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.searchbar .search{
+    width: 500px;
+    height: 35px;
+    border-radius: 25px;
+    padding-left: 50px;
+    border: none;
+    outline: none; 
+    box-shadow: 2px 5px 0 rgba(0,0,0,0.2);
+    transition: 0.5s;
+    transform: translateY(-10px);
+    opacity: 0;
+}
+
+.searchbar.active .search{
+    opacity: 1;
+    transform: translateY(10px);
+}
+
+.searchbar .clear{
+    position: absolute;
+    margin-top: -5px;
+    transform: translateX(-180%);
+    width: 20px;
+    height: 20px;
+    transition: 0.5s;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.searchbar.active .clear{
+    margin-top: 17.75px;
+    opacity: 1;
+}
+
+
+.information{
+    margin-top: 10vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    height: 500px;
+    background: rgba(57, 151, 112, 0.1);
+    border-radius: 20px;
+}
+
+.information .content {
+    width: 700;
+    height: 500;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    padding: 20px;
+    flex-wrap: wrap;
+
+}
+.information .content h1{
+    position: relative;
+    margin-bottom: 20px;
+    font-size: 2em;
+    font-weight: 500px;
+}
+
+.information .content h2{
+    position: relative;
+    margin-bottom: 10px;
+}
+
+
+.information .content .cntnt{
+    height: 100px;
+    position: relative;
+    overflow-y:scroll;
+    margin-bottom: 10px;
+}
+
+.information .content .rate{
+    width: 600px;
+    height: 50px;
+    position: relative;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.information .content .rate ul{
+    width: 400px;
+    position:absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.information .content .rate ul .star{
+    list-style: none;
+    margin-right:5px;
+}
+
+.information .content .rate ul .star a{
+    display: flex;
+    font-size: 1.5em;
+    text-decoration: none;
+    color: yellow;
+    transform: translateY(-60px);
+    transition: 0.5s;
+}
+
+.information .content .rate ul .star a:hover{
+transform: translateY(-65px);
+}
+
+
+
+.information .content .pr{
+    position: relative;
+    transform: translateY(30px);
+    font-size: 1.5em;
+    font-weight: bold;
+    left: 72%;
+}
+
+.information .content ul{
+    position: relative;
+    transform: translateY(50px);
+    width: 200px;
+    height: 70px;
+    left : 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.information .content ul .list{
+    margin-left:  10px;
+    position: relative;
+    list-style: none;
+    height: 100%;
+    width: 180px;
+    border : none;
+    border-radius: 25px;
+    z-index: 1;
+    transition: 0.5s;
+}
+
+.information .content ul .list:nth-child(1){
+    background:#03a9f4;
+}
+
+.information .content ul .list:nth-child(2){
+    background: crimson;
+}
+.information .content ul .list:nth-child(1):hover{
+    transform: translateY(-10px);
+    border-radius: 25px;
+}
+
+.information .content ul .list:nth-child(2):hover{
+    transform: translateY(-10px);
+    border-radius: 25px;
+}
+.information .content ul .list a{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+}
+
+.information .content ul .list a .icon{
+    margin-top: 10px;
+    font-size: 1.8em;
+    transition: 0.5s;
+}
+
+.information .content ul .list:hover a .icon{
+    transform: translateY(-10px);
+    
+}
+
+.information .content ul li a .text{
+    font-size: 0.75em;
+    transition: 0.5s;
+    transform: translateY(5px);
+    opacity: 0;
+}
+.information .content ul li:hover a .text{
+    opacity: 1;
+    transform: translateY(-10px);
+
+    font-weight: bold;
+}
+
+.comment{
+    position: relative;
+    margin-top:30px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+    padding: 10px;
+    text-align:justify;
+    width: 700px;
+    height: 300px;
+    background: rgba(57, 151, 112, 0.1);
+    border-radius: 20px;
+}
+
+.comment .commented{
+    height: 180px;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.comment .commented .ulcommented{
+    display: flex;
+    width: 100%;
+    height: 180px;
+    overflow-y: scroll;
+    flex-direction: column;
+}
+
+.comment .commented .ulcommented .usercommentli{
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    transition: 0.5s;
+}
+
+.comment .commented .ulcommented .usercommentli .icon{
+    font-size: 1.5em;
+    transition: 0.5s;
+}
+
+.comment .commented .ulcommented .usercommentli:hover .icon{
+    font-size: 2em;
+}
+.comment .commented .ulcommented .usercommentli p{
+    width: fit-content;
+    height: fit-content;
+    background: white;
+    border-radius: 25px;
+    border:none;
+    padding: 0 20px;
+    transition: 0.5s;
+}
+
+.comment .commented .ulcommented .usercommentli:hover p{
+padding-right: 300px;
+}
+
+
+
+.comment .commentbox{
+    position: relative;
+    height: 50px;
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.comment .commentbox .commentbox_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 600px;
+}
+
+.comment .commentbox .commentbox_container input[type = "text"]{
+    width: 500px;
+    height: 30px;
+    border-radius: 25px;
+    border:none;
+    outline: none;
+    padding: 20px;
+    margin-right: 10px;
+ 
+}
+
+.comment .commentbox .commentbox_container input[type = "button"]{
+width: 60px;
+height: 40px;
+border-radius: 25px;
+border:none;
+box-shadow: 1px 5px 6px rgba(0,0,0,0.05);
+cursor: pointer;
+transition: 0.5s;
+text-align: center;
+}
+
+.comment .commentbox .commentbox_container input[type = "button"]:hover{
+width: 60px;
+}
